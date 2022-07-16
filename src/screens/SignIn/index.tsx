@@ -3,11 +3,15 @@ import { KeyboardAvoidingView, Platform} from "react-native";
 
 import { Input } from '@components/Input';
 import { Button } from '@components/Button';
+import brandImg from '@assets/brand.png';
 
 import {
     Container,
     Content,
-    Title
+    Title,
+    Brand,
+    ForgotPasswordButton,
+    ForgotPasswordLabel
     
 } from './styles';
 
@@ -17,6 +21,7 @@ export function SignIn(){
         <Container>
             <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
                 <Content>
+                    <Brand source={brandImg}/>
 
                     <Title>Login</Title>
 
@@ -32,6 +37,12 @@ export function SignIn(){
                         type="secondary"
                         secureTextEntry
                     />
+
+                    <ForgotPasswordButton>
+                        <ForgotPasswordLabel>
+                            Esqueci minha senha
+                        </ForgotPasswordLabel>
+                    </ForgotPasswordButton>
  
                     <Button 
                         title="Entrar"
